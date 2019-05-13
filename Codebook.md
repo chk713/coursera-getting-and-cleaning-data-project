@@ -1,99 +1,45 @@
 # Code Book
 
-All data fields are summarized from the final result, located in file,`tidy.txt`.
+This codebook explains the data fields in the final result, "tidy.txt".
 
 ## Identifiers
 
-* `subject` - The ID of the test subject
-* `activity` - The type of activity performed when the corresponding measurements were taken
+"subject" -  The ID of the test subject
+"activity" - The type of activity performed when the corresponding measurements were taken
 
 ## Measurements
-
-* `tBodyAccMeanX`
-* `tBodyAccMeanY`
-* `tBodyAccMeanZ`
-* `tBodyAccStdX`
-* `tBodyAccStdY`
-* `tBodyAccStdZ`
-* `tGravityAccMeanX`
-* `tGravityAccMeanY`
-* `tGravityAccMeanZ`
-* `tGravityAccStdX`
-* `tGravityAccStdY`
-* `tGravityAccStdZ`
-* `tBodyAccJerkMeanX`
-* `tBodyAccJerkMeanY`
-* `tBodyAccJerkMeanZ`
-* `tBodyAccJerkStdX`
-* `tBodyAccJerkStdY`
-* `tBodyAccJerkStdZ`
-* `tBodyGyroMeanX`
-* `tBodyGyroMeanY`
-* `tBodyGyroMeanZ`
-* `tBodyGyroStdX`
-* `tBodyGyroStdY`
-* `tBodyGyroStdZ`
-* `tBodyGyroJerkMeanX`
-* `tBodyGyroJerkMeanY`
-* `tBodyGyroJerkMeanZ`
-* `tBodyGyroJerkStdX`
-* `tBodyGyroJerkStdY`
-* `tBodyGyroJerkStdZ`
-* `tBodyAccMagMean`
-* `tBodyAccMagStd`
-* `tGravityAccMagMean`
-* `tGravityAccMagStd`
-* `tBodyAccJerkMagMean`
-* `tBodyAccJerkMagStd`
-* `tBodyGyroMagMean`
-* `tBodyGyroMagStd`
-* `tBodyGyroJerkMagMean`
-* `tBodyGyroJerkMagStd`
-* `fBodyAccMeanX`
-* `fBodyAccMeanY`
-* `fBodyAccMeanZ`
-* `fBodyAccStdX`
-* `fBodyAccStdY`
-* `fBodyAccStdZ`
-* `fBodyAccMeanFreqX`
-* `fBodyAccMeanFreqY`
-* `fBodyAccMeanFreqZ`
-* `fBodyAccJerkMeanX`
-* `fBodyAccJerkMeanY`
-* `fBodyAccJerkMeanZ`
-* `fBodyAccJerkStdX`
-* `fBodyAccJerkStdY`
-* `fBodyAccJerkStdZ`
-* `fBodyAccJerkMeanFreqX`
-* `fBodyAccJerkMeanFreqY`
-* `fBodyAccJerkMeanFreqZ`
-* `fBodyGyroMeanX`
-* `fBodyGyroMeanY`
-* `fBodyGyroMeanZ`
-* `fBodyGyroStdX`
-* `fBodyGyroStdY`
-* `fBodyGyroStdZ`
-* `fBodyGyroMeanFreqX`
-* `fBodyGyroMeanFreqY`
-* `fBodyGyroMeanFreqZ`
-* `fBodyAccMagMean`
-* `fBodyAccMagStd`
-* `fBodyAccMagMeanFreq`
-* `fBodyBodyAccJerkMagMean`
-* `fBodyBodyAccJerkMagStd`
-* `fBodyBodyAccJerkMagMeanFreq`
-* `fBodyBodyGyroMagMean`
-* `fBodyBodyGyroMagStd`
-* `fBodyBodyGyroMagMeanFreq`
-* `fBodyBodyGyroJerkMagMean`
-* `fBodyBodyGyroJerkMagStd`
-* `fBodyBodyGyroJerkMagMeanFreq`
+"tBodyAccMeanX"                "tBodyAccMeanY"                "tBodyAccMeanZ"               
+"tBodyAccStdX"                 "tBodyAccStdY"                 "tBodyAccStdZ"                
+"tGravityAccMeanX"             "tGravityAccMeanY"             "tGravityAccMeanZ"            
+"tGravityAccStdX"              "tGravityAccStdY"              "tGravityAccStdZ"             
+"tBodyAccJerkMeanX"            "tBodyAccJerkMeanY"            "tBodyAccJerkMeanZ"           
+"tBodyAccJerkStdX"             "tBodyAccJerkStdY"             "tBodyAccJerkStdZ"            
+"tBodyGyroMeanX"               "tBodyGyroMeanY"               "tBodyGyroMeanZ"              
+"tBodyGyroStdX"                "tBodyGyroStdY"                "tBodyGyroStdZ"               
+"tBodyGyroJerkMeanX"           "tBodyGyroJerkMeanY"           "tBodyGyroJerkMeanZ"          
+"tBodyGyroJerkStdX"            "tBodyGyroJerkStdY"            "tBodyGyroJerkStdZ"           
+"tBodyAccMagMean"              "tBodyAccMagStd"               "tGravityAccMagMean"          
+"tGravityAccMagStd"            "tBodyAccJerkMagMean"          "tBodyAccJerkMagStd"          
+"tBodyGyroMagMean"             "tBodyGyroMagStd"              "tBodyGyroJerkMagMean"        
+"tBodyGyroJerkMagStd"          "fBodyAccMeanX"                "fBodyAccMeanY"               
+"fBodyAccMeanZ"                "fBodyAccStdX"                 "fBodyAccStdY"                
+"fBodyAccStdZ"                 "fBodyAccMeanFreqX"            "fBodyAccMeanFreqY"           
+"fBodyAccMeanFreqZ"            "fBodyAccJerkMeanX"            "fBodyAccJerkMeanY"           
+"fBodyAccJerkMeanZ"            "fBodyAccJerkStdX"             "fBodyAccJerkStdY"            
+"fBodyAccJerkStdZ"             "fBodyAccJerkMeanFreqX"        "fBodyAccJerkMeanFreqY"       
+"fBodyAccJerkMeanFreqZ"        "fBodyGyroMeanX"               "fBodyGyroMeanY"              
+"fBodyGyroMeanZ"               "fBodyGyroStdX"                "fBodyGyroStdY"               
+"fBodyGyroStdZ"                "fBodyGyroMeanFreqX"           "fBodyGyroMeanFreqY"          
+"fBodyGyroMeanFreqZ"           "fBodyAccMagMean"              "fBodyAccMagStd"              
+"fBodyAccMagMeanFreq"          "fBodyBodyAccJerkMagMean"      "fBodyBodyAccJerkMagStd"      
+"fBodyBodyAccJerkMagMeanFreq"  "fBodyBodyGyroMagMean"         "fBodyBodyGyroMagStd"         
+"fBodyBodyGyroMagMeanFreq"     "fBodyBodyGyroJerkMagMean"     "fBodyBodyGyroJerkMagStd"     
+"fBodyBodyGyroJerkMagMeanFreq"
 
 ## Activity Labels
-
-* `WALKING` = value 1
-* `WALKING_UPSTAIRS` = value 2
-* `WALKING_DOWNSTAIRS` = value 3
-* `SITTING` = value 4
-* `STANDING` = value 5
-* `LAYING` = value 6
+1= "WALKING"
+2= "WALKING_UPSTAIRS"
+3= "WALKING_DOWNSTAIRS"
+4= "SITTING"
+5= "STANDING"
+6= "LAYING"
