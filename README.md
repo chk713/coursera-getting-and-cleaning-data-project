@@ -1,7 +1,8 @@
-# Coursera project - "Getting and Cleaning Data"
+# Final project for "Getting and Cleaning Data"
 
-This is the course project for the "Getting and Cleaning Data" Coursera course.
-The R script, `run_analysis.R`, will perform below :
+This is the final project for "Getting and Cleaning Data" course.  The script is written and saved under "run_analysis.r" and the final result is saved as "tidy.txt".
+
+The code will perform followings:
 
 1. Download the dataset if it does not already exist in the working directory
 2. Load the collected data and feature info
@@ -12,5 +13,3 @@ The R script, `run_analysis.R`, will perform below :
 6. Converts the `activity` and `subject` columns into factors
 7. Creates a tidy dataset that consists of the average value of each
    variable for each subject and activity pair.
-
-The end result is shown in the file `tidy.txt`.
