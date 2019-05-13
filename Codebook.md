@@ -1,9 +1,7 @@
 # Code Book
-
 This codebook explains the data fields in the final result, "tidy.txt".
 
 ## Identifiers
-
 "subject" -  The ID of the test subject
 "activity" - The type of activity performed when the corresponding measurements were taken
 
