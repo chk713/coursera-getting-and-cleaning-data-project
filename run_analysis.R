@@ -43,7 +43,7 @@ colnames(test) <- c("subject", "activity", featureNames)
 allData <- rbind(train, test)
 
 
-# Create tidy dataset with 
+# Creates a tidy data set with the average of each variable for each activity and each subject
 allData.melted <- melt(allData, id = c("subject", "activity"))
 allData.mean <- dcast(allData.melted, subject + activity ~ variable, mean)
 
