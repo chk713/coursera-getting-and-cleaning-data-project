@@ -1,52 +1,52 @@
 library(reshape2)
 
-filename <- "getdata_dataset.zip"
 
-# Download data set
-if (!file.exists(filename)){
-  fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "
-  download.file(fileURL, filename, method="curl")
-}  
-# Unzip the dataset
-if (!file.exists("UCI HAR Dataset")) { 
-  unzip(filename) 
-}
+# Download data set (Run this for the first time only)
+#fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "
+#download.file(fileURL, "data1.zip", method="curl")
+#unzip("data1.zip") 
+
 
 # Load activity labels and features
-activityLabels <- read.table("UCI HAR Dataset/activity_labels.txt")
-activityLabels[,2] <- as.character(activityLabels[,2])
-features <- read.table("UCI HAR Dataset/features.txt")
-features[,2] <- as.character(features[,2])
+mainLabel <- read.table("UCI HAR Dataset/activity_labels.txt")
+mainLabel[,2] <- as.character(mainLabel[,2])
+mainFeatures <- read.table("UCI HAR Dataset/features.txt")
+mainFeatures[,2] <- as.character(mainFeatures[,2])
 
-# Filter out data with mean and standard deviation
-featuretoKeep <- grep(".*mean.*|.*std.*", features[,2])
-featuretoKeep.names <- features[featuretoKeep,2]
-featuretoKeep.names = gsub("-mean", "Mean", featuretoKeep.names)
-featuretoKeep.names = gsub("-std", "Std", featuretoKeep.names)
-featuretoKeep.names <- gsub("[-()]", "", featuretoKeep.names)
+
+# Filter out data with mean and SD
+featureIndex <- grep("mean|std", mainFeatures[,2])
+featureNames <- mainFeatures[featureIndex,2]    #Filter out names
+#Modify the feature name to be more visible
+featureNames = gsub("-mean", "Mean", featureNames)
+featureNames = gsub("-std", "Std", featureNames)
+featureNames <- gsub("[-()]", "", featureNames)  #Final feature names
+
 
 # Load train data
-train <- read.table("UCI HAR Dataset/train/X_train.txt")[featuretoKeep]
-trainActivities <- read.table("UCI HAR Dataset/train/Y_train.txt")
 trainSubjects <- read.table("UCI HAR Dataset/train/subject_train.txt")
+trainActivities <- read.table("UCI HAR Dataset/train/Y_train.txt")
+train <- read.table("UCI HAR Dataset/train/X_train.txt")[featureIndex]
 train <- cbind(trainSubjects, trainActivities, train)
+colnames(train) <- c("subject", "activity", featureNames)
+
 
 # Load test data
-test <- read.table("UCI HAR Dataset/test/X_test.txt")[featuretoKeep]
-testActivities <- read.table("UCI HAR Dataset/test/Y_test.txt")
 testSubjects <- read.table("UCI HAR Dataset/test/subject_test.txt")
+testActivities <- read.table("UCI HAR Dataset/test/Y_test.txt")
+test <- read.table("UCI HAR Dataset/test/X_test.txt")[featureIndex]
 test <- cbind(testSubjects, testActivities, test)
+colnames(test) <- c("subject", "activity", featureNames)
 
-# merge datasets
+
+# Combine train and test data
 allData <- rbind(train, test)
-colnames(allData) <- c("subject", "activity", featuretoKeep.names)
 
-# Convert activities & subjects into factors
-allData$activity <- factor(allData$activity, levels = activityLabels[,1], labels = activityLabels[,2])
-allData$subject <- as.factor(allData$subject)
 
 # Create tidy dataset that consists of the average of each variable for each subject & activity pair
 allData.melted <- melt(allData, id = c("subject", "activity"))
 allData.mean <- dcast(allData.melted, subject + activity ~ variable, mean)
 
+
+#Export to text file
 write.table(allData.mean, "tidy.txt", row.names = FALSE, quote = FALSE)
