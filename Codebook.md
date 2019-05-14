@@ -2,8 +2,8 @@
 This codebook explains the data fields in the final result, "tidy.txt".
 
 ## Identifiers
-"subject" -  The ID of the test subject
-"activity" - The type of activity performed when the corresponding measurements were taken
+"subject" is the index value of the test subject.
+"Activity" is consist of 1= "WALKING", 2= "WALKING_UPSTAIRS", 3= "WALKING_DOWNSTAIRS", 4= "SITTING", 5= "STANDING", 6= "LAYING"
 
 ## Measurements
 "tBodyAccMeanX"                "tBodyAccMeanY"                "tBodyAccMeanZ"               
@@ -34,10 +34,3 @@ This codebook explains the data fields in the final result, "tidy.txt".
 "fBodyBodyGyroMagMeanFreq"     "fBodyBodyGyroJerkMagMean"     "fBodyBodyGyroJerkMagStd"     
 "fBodyBodyGyroJerkMagMeanFreq"
 
-## Activity Labels
-1= "WALKING"
-2= "WALKING_UPSTAIRS"
-3= "WALKING_DOWNSTAIRS"
-4= "SITTING"
-5= "STANDING"
-6= "LAYING"
