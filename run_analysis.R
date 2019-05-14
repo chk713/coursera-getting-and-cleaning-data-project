@@ -16,7 +16,7 @@ mainFeatures[,2] <- as.character(mainFeatures[,2])
 
 # Filter out data with mean and SD
 featureIndex <- grep("mean|std", mainFeatures[,2])
-featureNames <- mainFeatures[featureIndex,2]    #Filter out names
+featureNames <- mainFeatures[featureIndex,2]
 #Modify the feature name to be more visible
 featureNames = gsub("-mean", "Mean", featureNames)
 featureNames = gsub("-std", "Std", featureNames)
@@ -28,7 +28,7 @@ trainSubjects <- read.table("UCI HAR Dataset/train/subject_train.txt")
 trainActivities <- read.table("UCI HAR Dataset/train/Y_train.txt")
 train <- read.table("UCI HAR Dataset/train/X_train.txt")[featureIndex]
 train <- cbind(trainSubjects, trainActivities, train)
-colnames(train) <- c("subject", "activity", featureNames)
+colnames(train) <- c("subject", "activity", featureNames)  #Final train set
 
 
 # Load test data
@@ -36,7 +36,7 @@ testSubjects <- read.table("UCI HAR Dataset/test/subject_test.txt")
 testActivities <- read.table("UCI HAR Dataset/test/Y_test.txt")
 test <- read.table("UCI HAR Dataset/test/X_test.txt")[featureIndex]
 test <- cbind(testSubjects, testActivities, test)
-colnames(test) <- c("subject", "activity", featureNames)
+colnames(test) <- c("subject", "activity", featureNames)  #Final test set
 
 
 # Combine train and test data
