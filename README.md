@@ -4,12 +4,11 @@ This is the final project for "Getting and Cleaning Data" course.  The script is
 
 The code will perform followings:
 
-1. Download the dataset if it does not already exist in the working directory
-2. Load the collected data and feature info
-3. Loads training and test datasets.  Filter the dataset including mean or standard deviation.
-4. Loads the activity and subject data and merges those columns with the dataset for train data.
-5. Repeat step 4 with test data
+1. Download the required file and unzip it (Run it for the first time only)
+2. Load activity labels and features data
+3. Filter out data with mean and standard deviation and modify the file name to be more visible.
+4. Loads train data.  Import subjects, activities and data separately and combine together.
+5. Repeat step 4 for test data.
 5. Merges training and test datasets.
 6. Converts the `activity` and `subject` columns into factors
-7. Creates a tidy dataset that consists of the average value of each
-   variable for each subject and activity pair.
+7. Creates a tidy data set with the average of each variable for each activity and each subject.
