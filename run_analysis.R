@@ -1,4 +1,4 @@
-library(reshape2)
+#library(reshape2)
 
 
 # Download data set (Run this for the first time only)
@@ -43,7 +43,7 @@ colnames(test) <- c("subject", "activity", featureNames)
 allData <- rbind(train, test)
 
 
-# Create tidy dataset that consists of the average of each variable for each subject & activity pair
+# Create tidy dataset with 
 allData.melted <- melt(allData, id = c("subject", "activity"))
 allData.mean <- dcast(allData.melted, subject + activity ~ variable, mean)
 
